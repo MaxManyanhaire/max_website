@@ -1,19 +1,17 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, type ReactNode } from "react";
+"use client"
+
+import { motion, useInView } from "framer-motion"
+import { useRef, type ReactNode } from "react"
 
 interface AnimatedSectionProps {
-  children: ReactNode;
-  delay?: number;
-  className?: string;
+  children: ReactNode
+  delay?: number
+  className?: string
 }
 
-export function AnimatedSection({
-  children,
-  delay = 0,
-  className = "",
-}: AnimatedSectionProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+export function AnimatedSection({ children, delay = 0, className = "" }: AnimatedSectionProps) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
     <motion.div
@@ -29,5 +27,5 @@ export function AnimatedSection({
     >
       {children}
     </motion.div>
-  );
+  )
 }
