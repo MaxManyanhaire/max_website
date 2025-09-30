@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { motion, AnimatePresence } from "framer-motion"
-import type { Section } from "../../App"
-import { cn } from "../../lib/utils"
+import { motion, AnimatePresence } from "framer-motion";
+import type { Section } from "../../App";
+import { cn } from "../../lib/utils";
 
 interface NavToggleProps {
-  activeSection: Section
-  onSectionChange: (section: Section) => void
+  activeSection: Section;
+  onSectionChange: (section: Section) => void;
 }
 
 export function NavToggle({ activeSection, onSectionChange }: NavToggleProps) {
   return (
-    <div className="relative bg-secondary rounded-full p-1 flex items-center gap-1">
+    <div className="relative bg-[#0D101C] rounded-full p-1 flex items-center gap-1">
       {/* Animated background indicator */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -36,7 +36,9 @@ export function NavToggle({ activeSection, onSectionChange }: NavToggleProps) {
         onClick={() => onSectionChange("work")}
         className={cn(
           "relative z-10 px-6 py-2 text-sm font-medium rounded-full transition-colors",
-          activeSection === "work" ? "text-foreground" : "text-muted-foreground hover:text-foreground",
+          activeSection === "work"
+            ? "text-foreground"
+            : "text-muted-foreground hover:text-foreground"
         )}
       >
         <motion.span
@@ -53,7 +55,9 @@ export function NavToggle({ activeSection, onSectionChange }: NavToggleProps) {
         onClick={() => onSectionChange("about")}
         className={cn(
           "relative z-10 px-6 py-2 text-sm font-medium rounded-full transition-colors",
-          activeSection === "about" ? "text-foreground" : "text-muted-foreground hover:text-foreground",
+          activeSection === "about"
+            ? "text-foreground"
+            : "text-muted-foreground hover:text-foreground"
         )}
       >
         <motion.span
@@ -66,5 +70,5 @@ export function NavToggle({ activeSection, onSectionChange }: NavToggleProps) {
         </motion.span>
       </button>
     </div>
-  )
+  );
 }

@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Linkedin, Instagram } from "lucide-react"
+import { motion } from "framer-motion";
+import { Linkedin, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="py-12 px-6 border-t border-border/50">
+    <footer className="py-12 px-6  border-border/50 bg-[#232733]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,9 +45,11 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="text-sm text-muted-foreground">Crafted with love & a salted rim margarita.</p>
+          <p className="text-sm text-muted-foreground">
+            Crafted with love & a salted rim margarita.
+          </p>
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }
