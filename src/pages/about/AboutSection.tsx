@@ -2,44 +2,8 @@ import React from "react";
 import { Box, Container, Typography, Grid } from "@mui/material";
 import { colors } from "../../theme";
 import { AnimatedSection } from "../../components/ui/AnimatedSection";
-import { SocialIcon } from "../../components/ui/SocialIcons";
-import { LinkedInIcon, InstagramIcon } from "../../assets/icons";
-
-interface TimelineItem {
-  title: string;
-  content: string;
-}
-
-const timelineData: TimelineItem[] = [
-  {
-    title: "TODAY",
-    content:
-      "My Design Journey Began At Uncommon.Org's Bootcamp In 2022-2023, Where I Was Introduced To UI/UX And Discovered How Design Can Transform Ideas Into Tools People Actually Enjoy Using.",
-  },
-  {
-    title: "CHILDHOOD",
-    content:
-      "My Design Journey Began At Uncommon.Org's Bootcamp In 2022-2023, Where I Was Introduced To UI/UX And Discovered How Design Can Transform Ideas Into Tools People Actually Enjoy Using.",
-  },
-  {
-    title: "GROWTH",
-    content:
-      "My Design Journey Began At Uncommon.Org's Bootcamp In 2022-2023, Where I Was Introduced To UI/UX And Discovered How Design Can Transform Ideas Into Tools People Actually Enjoy Using.",
-  },
-  {
-    title: "GOAL",
-    content:
-      "My Design Journey Began At Uncommon.Org's Bootcamp In 2022-2023, Where I Was Introduced To UI/UX And Discovered How Design Can Transform Ideas Into Tools People Actually Enjoy Using.",
-  },
-];
-
-// Update these image URLs with your actual images
-const bentoImages = [
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/02%20Main%20Screen%20%283%29-dQR8k62zzxknM3wY8Sq9NMWjgvDuWN.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/02%20Main%20Screen%20%283%29-dQR8k62zzxknM3wY8Sq9NMWjgvDuWN.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/02%20Main%20Screen%20%283%29-dQR8k62zzxknM3wY8Sq9NMWjgvDuWN.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/02%20Main%20Screen%20%283%29-dQR8k62zzxknM3wY8Sq9NMWjgvDuWN.png",
-];
+import { timelineData } from "../../data/timeline-data";
+import { bentoImages } from "../../data/about-images";
 
 export const AboutSection: React.FC = () => {
   return (
@@ -196,35 +160,6 @@ export const AboutSection: React.FC = () => {
               maxwell.manyanhaire@gmail.com
             </Typography>
           </Box>
-        </AnimatedSection>
-
-        {/* Social Icons */}
-        <AnimatedSection animation="fadeInUp" delay={0.2}>
-          <Box sx={{ display: "flex", gap: 2, mb: 8 }}>
-            <SocialIcon href="https://linkedin.com" target="_blank">
-              <LinkedInIcon />
-            </SocialIcon>
-            {/* <SocialIcon href="https://behance.net" target="_blank">
-              <BehanceIcon />
-            </SocialIcon> */}
-            <SocialIcon href="https://instagram.com" target="_blank">
-              <InstagramIcon />
-            </SocialIcon>
-          </Box>
-        </AnimatedSection>
-
-        {/* Footer */}
-        <AnimatedSection animation="fadeIn" delay={0.4}>
-          <Typography
-            variant="body2"
-            sx={{
-              color: colors.text.muted,
-              textAlign: "center",
-              fontStyle: "italic",
-            }}
-          >
-            Crafted with love & a salted rim margarita.
-          </Typography>
         </AnimatedSection>
       </Container>
     </Box>
