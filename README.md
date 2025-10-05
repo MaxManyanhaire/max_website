@@ -1,124 +1,73 @@
-# Maxwell's Portfolio
+# React + TypeScript + Vite
 
-A modern, animated portfolio built with React, TypeScript, and Framer Motion.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- 🎨 Centralized theme configuration in `src/config/theme.ts`
-- 🧩 Small, reusable components
-- 📝 Easy project management via `src/data/projects.ts`
-- ✨ Smooth scroll animations
-- 🎭 Animated navigation transitions
-- 📱 Fully responsive design
-- 🎯 Clean, maintainable architecture
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Project Structure
+## React Compiler
 
-\`\`\`
-src/
-├── components/
-│   ├── about/          # About section components
-│   ├── footer/         # Footer component
-│   ├── navigation/     # Navigation components
-│   ├── projects/       # Project card components
-│   ├── sections/       # Main section components
-│   └── ui/             # Reusable UI components
-├── config/
-│   └── theme.ts        # Centralized theme configuration
-├── data/
-│   ├── about.ts        # About section data
-│   └── projects.ts     # Projects data
-├── hooks/              # Custom React hooks
-├── lib/                # Utility functions
-└── styles/             # Global styles
-\`\`\`
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Getting Started
+## Expanding the ESLint configuration
 
-1. Install dependencies:
-\`\`\`bash
-npm install
-\`\`\`
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-2. Run the development server:
-\`\`\`bash
-npm run dev
-\`\`\`
-
-3. Build for production:
-\`\`\`bash
-npm run build
-\`\`\`
-
-## Customization
-
-### Changing Colors
-
-Edit `src/config/theme.ts` to change the entire color scheme:
-
-\`\`\`typescript
-export const theme = {
-  colors: {
-    background: "#3D4451",
-    textPrimary: "#E2E8F0",
-    // ... more colors
-  },
-}
-\`\`\`
-
-Or edit CSS variables in `src/styles/globals.css`:
-
-\`\`\`css
-:root {
-  --background: 220 17% 25%;
-  --foreground: 210 40% 96%;
-  /* ... more variables */
-}
-\`\`\`
-
-### Adding Projects
-
-Add new projects to `src/data/projects.ts`:
-
-\`\`\`typescript
-export const projects: Project[] = [
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
   {
-    id: "my-project",
-    title: "My Project",
-    subtitle: "Project Subtitle",
-    description: "Project description...",
-    image: "/my-project-image.jpg",
-    imageAlt: "My project",
-    layout: "left", // or "right"
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
   },
-  // ... more projects
-]
-\`\`\`
+])
+```
 
-### Updating About Section
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-Edit your story in `src/data/about.ts`:
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-\`\`\`typescript
-export const timeline: TimelineItem[] = [
+export default defineConfig([
+  globalIgnores(['dist']),
   {
-    id: "today",
-    title: "TODAY",
-    description: "Your story...",
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
   },
-  // ... more timeline items
-]
-\`\`\`
-
-## Technologies
-
-- React 18
-- TypeScript
-- Vite
-- Framer Motion
-- Tailwind CSS
-- Lucide Icons
-
-## License
-
-MIT
+])
+```
