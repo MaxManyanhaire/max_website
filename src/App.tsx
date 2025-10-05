@@ -5,6 +5,7 @@ import { Navbar } from "./pages/navigation/Navbar";
 import { HeroSection } from "./pages/home/HeroSection";
 import { ProjectsSection } from "./pages/home/ProjectsSection";
 import { AboutSection } from "./pages/about/AboutSection";
+import Footer from "./pages/footer/FooterSection";
 
 function App() {
   const [activeSection, setActiveSection] = useState<"work" | "about">("work");
@@ -12,19 +13,33 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh", // ensures footer sticks to bottom
+          backgroundColor: theme.palette.background.default,
+        }}
+      >
+        {/* Navbar */}
         <Navbar
           activeSection={activeSection}
           onSectionChange={setActiveSection}
         />
-        {activeSection === "work" ? (
-          <>
-            <HeroSection />
-            <ProjectsSection />
-          </>
-        ) : (
-          <AboutSection />
-        )}
+
+        {/* Main content */}
+        <Box component="main" sx={{ flex: 1 }}>
+          {activeSection === "work" ? (
+            <>
+              <HeroSection />
+              <ProjectsSection />
+            </>
+          ) : (
+            <AboutSection />
+          )}
+        </Box>
+
+        <Footer />
       </Box>
     </ThemeProvider>
   );

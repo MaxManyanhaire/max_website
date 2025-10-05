@@ -7,6 +7,7 @@ export const colors = {
     main: "#4A5568",
     light: "#5A6B7F",
     dark: "#2D3748",
+    footer: "#232733",
   },
   secondary: {
     main: "#E2E8F0",

@@ -11,7 +11,12 @@ import {
 } from "@mui/material";
 import { colors } from "../../theme";
 import { NavButton } from "../../components/ui/NavButton";
-import { MenuIcon, CloseIcon, ArrowForwardIcon } from "../../assets/icons";
+import {
+  MenuIcon,
+  CloseIcon,
+  ArrowForwardIcon,
+} from "../../assets/icons/icons";
+import profilePhoto from "../../assets/images/profile-photo.png";
 
 interface NavbarProps {
   activeSection: "work" | "about";
@@ -58,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         >
           {/* Logo */}
           <Avatar
-            src="/path-to-your-avatar.jpg"
+            src={profilePhoto}
             alt="Maxwell"
             sx={{
               width: 48,
