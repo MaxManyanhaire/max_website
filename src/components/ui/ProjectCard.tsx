@@ -3,23 +3,35 @@ import { Box, Typography, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import { theme } from "../../theme";
 
-interface ProjectCardProps {
+export interface ProjectData {
+  id: string;
   title: string;
   subtitle: string;
   description: string;
   image: string;
   imageAlt?: string;
+  caseStudyLink?: string;
+}
+
+interface ProjectCardProps {
+  project: ProjectData;
   delay?: number;
+  layout?: "left" | "right";
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
-  title,
-  subtitle,
-  description,
-  image,
-  imageAlt = "Project image",
+  project,
+  layout = "left",
   delay = 0,
 }) => {
+  const {
+    title,
+    subtitle,
+    description,
+    image,
+    imageAlt = "Project image",
+  } = project;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -30,13 +42,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
+          flexDirection: {
+            xs: "column",
+            md: layout === "left" ? "row" : "row-reverse",
+          },
           gap: { xs: 4, md: 8 },
           alignItems: "center",
           mb: 8,
         }}
       >
-        {/* Project Image */}
+        {/* Image */}
         <Box
           sx={{
             flex: { xs: "1", md: "0 0 45%" },
@@ -49,37 +64,23 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             alt={imageAlt}
             sx={{
               width: "100%",
-              height: "auto",
+              height: "460px",
               borderRadius: 3,
-              boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
             }}
           />
         </Box>
 
-        {/* Project Details */}
-        <Box
-          sx={{
-            flex: 1,
-            textAlign: { xs: "center", md: "left" },
-          }}
-        >
+        {/* Details */}
+        <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" } }}>
           <Typography
             variant="h4"
-            sx={{
-              color: theme.palette.text.primary,
-              fontWeight: 600,
-              mb: 1,
-            }}
+            sx={{ color: theme.palette.text.primary, fontWeight: 600, mb: 1 }}
           >
             {title}
           </Typography>
           <Typography
             variant="h6"
-            sx={{
-              color: theme.palette.text.secondary,
-              mb: 3,
-              fontWeight: 400,
-            }}
+            sx={{ color: theme.palette.text.secondary, mb: 3 }}
           >
             {subtitle}
           </Typography>
@@ -96,10 +97,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {description}
           </Typography>
           <Button
-            variant="outlined"
+            variant="contained"
             sx={{
               color: theme.palette.text.primary,
               borderColor: theme.palette.text.secondary,
+              boxShadow: 0,
+              backgroundColor: "#0D101C80",
               px: 4,
               py: 1.5,
               borderRadius: 2,

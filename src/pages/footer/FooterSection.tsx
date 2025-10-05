@@ -4,7 +4,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { motion } from "framer-motion";
 import { FaBehance } from "react-icons/fa";
-import colors from "../../theme";
 
 const MotionBox = motion(Box);
 
