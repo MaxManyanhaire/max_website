@@ -1,6 +1,6 @@
-import { ProjectData } from "../components/ui/ProjectCard";
+import type { ProjectData } from "../components/ui/ProjectCard";
+import pixelPilotMobileApp from "../assets/images/pixel-pilot-mobile-app.svg";
 
-// Easy to update - just add new projects to this array
 export const projects: ProjectData[] = [
   {
     id: "1",
@@ -8,18 +8,16 @@ export const projects: ProjectData[] = [
     subtitle: "Muzukuru Funeral Streaming",
     description:
       "Pixel Pilot Is A Crew Companion App That Streamlines Funeral And Memorial Live-Streams. It Brings Camera Setups, Graphics, Roles, And Checklists Into One Place, Making Every Production Smooth And Coordinated.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iPhone%2013%20%26%2014%20-%208-xDwqWTYd0zc6y4jVB3tYDY2AGdkgsN.png",
+    image: pixelPilotMobileApp,
     caseStudyLink: "#",
   },
   {
     id: "2",
-    title: "Your Next Project",
-    subtitle: "Project Subtitle",
+    title: "Pixel Pilot Mobile App",
+    subtitle: "Muzukuru Funeral Streaming",
     description:
-      "Add your project description here. This structure makes it easy to add new projects.",
-    image: "/path-to-your-image.jpg",
+      "Pixel Pilot Is A Crew Companion App That Streamlines Funeral And Memorial Live-Streams. It Brings Camera Setups, Graphics, Roles, And Checklists Into One Place, Making Every Production Smooth And Coordinated.",
+    image: pixelPilotMobileApp,
     caseStudyLink: "#",
   },
-  // Add more projects here...
 ];
