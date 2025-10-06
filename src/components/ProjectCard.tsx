@@ -108,7 +108,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             alt={imageAlt}
             sx={{
               width: "100%",
-              height: "460px",
+              height: "500px",
               borderRadius: 3,
             }}
           />
