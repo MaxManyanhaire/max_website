@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Typography, Grid } from "@mui/material";
 import { colors } from "../../theme";
-import { AnimatedSection } from "../../components/ui/AnimatedSection";
+import { AnimatedSection } from "../../components/AnimatedSection";
 import { timelineData } from "../../data/timeline-data";
 import { bentoImages } from "../../data/about-images";
 
@@ -14,57 +14,71 @@ export const AboutSection: React.FC = () => {
         py: 12,
       }}
     >
-      <Container maxWidth="lg">
-        {/* Bento Grid Images */}
+      <Container maxWidth="md">
         <AnimatedSection animation="fadeInUp">
-          <Grid container spacing={2} sx={{ mb: 8 }}>
-            <Grid size={{ xs: 6, md: 6 }}>
+          <Grid
+            container
+            spacing={2}
+            sx={{
+              mb: 8,
+              maxWidth: "730px",
+              mx: "auto", // centers the grid horizontally
+            }}
+          >
+            {/* Left Tall Image */}
+            <Grid size={{ xs: 12, md: 6 }}>
               <Box
                 component="img"
                 src={bentoImages[0]}
                 alt="About 1"
                 sx={{
                   width: "100%",
-                  height: { xs: "200px", md: "400px" },
+                  height: { xs: "250px", md: "485px" },
                   objectFit: "cover",
                   borderRadius: 3,
                 }}
               />
             </Grid>
-            <Grid size={{ xs: 6, md: 6 }}>
+
+            {/* Top Right Image */}
+            <Grid size={{ xs: 6, md: 3 }}>
               <Box
                 component="img"
                 src={bentoImages[1]}
                 alt="About 2"
                 sx={{
                   width: "100%",
-                  height: { xs: "200px", md: "400px" },
+                  height: { xs: "200px", md: "250px" },
                   objectFit: "cover",
                   borderRadius: 3,
                 }}
               />
             </Grid>
-            <Grid size={{ xs: 6, md: 6 }}>
+
+            {/* Bottom Right Image */}
+            <Grid size={{ xs: 6, md: 3 }}>
               <Box
                 component="img"
                 src={bentoImages[2]}
                 alt="About 3"
                 sx={{
                   width: "100%",
-                  height: { xs: "200px", md: "300px" },
+                  height: { xs: "200px", md: "250px" },
                   objectFit: "cover",
                   borderRadius: 3,
                 }}
               />
             </Grid>
-            <Grid size={{ xs: 6, md: 6 }}>
+
+            {/* Bottom Wide Image */}
+            <Grid size={{ xs: 12 }}>
               <Box
                 component="img"
                 src={bentoImages[3]}
                 alt="About 4"
                 sx={{
                   width: "100%",
-                  height: { xs: "200px", md: "300px" },
+                  height: { xs: "250px", md: "300px" },
                   objectFit: "cover",
                   borderRadius: 3,
                 }}
@@ -78,7 +92,7 @@ export const AboutSection: React.FC = () => {
           <Typography
             variant="h2"
             sx={{
-              color: colors.text.primary,
+              color: "#CCCCCC",
               mb: 6,
               fontWeight: 600,
             }}
@@ -99,11 +113,12 @@ export const AboutSection: React.FC = () => {
                 <Typography
                   variant="overline"
                   sx={{
-                    color: colors.text.muted,
-                    fontSize: "0.75rem",
-                    letterSpacing: "0.15em",
-                    mb: 2,
+                    color: "#7C818D",
+                    fontSize: "22px",
+                    letterSpacing: "0.1px",
                     display: "block",
+                    fontFamily: '"DM Sans", sans-serif',
+                    fontWeight: 400,
                   }}
                 >
                   {item.title}
@@ -111,7 +126,7 @@ export const AboutSection: React.FC = () => {
                 <Typography
                   variant="body1"
                   sx={{
-                    color: colors.text.secondary,
+                    color: "#CCCCCC",
                     lineHeight: 1.8,
                     maxWidth: "700px",
                   }}
@@ -129,7 +144,7 @@ export const AboutSection: React.FC = () => {
             <Typography
               variant="h3"
               sx={{
-                color: colors.text.primary,
+                color: "#CCCCCC",
                 mb: 2,
                 fontWeight: 600,
               }}
@@ -139,7 +154,7 @@ export const AboutSection: React.FC = () => {
             <Typography
               variant="body1"
               sx={{
-                color: colors.text.secondary,
+                color: "#C4C9E3",
                 mb: 2,
               }}
             >
@@ -149,7 +164,7 @@ export const AboutSection: React.FC = () => {
               component="a"
               href="mailto:maxwell.manyanhaire@gmail.com"
               sx={{
-                color: colors.text.primary,
+                color: "#C4C9E3",
                 textDecoration: "none",
                 fontSize: "1.1rem",
                 "&:hover": {

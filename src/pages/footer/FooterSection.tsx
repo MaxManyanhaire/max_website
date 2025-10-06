@@ -12,8 +12,8 @@ const Footer: React.FC = () => {
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#1E212B",
-        color: "#B0B3C0",
+        backgroundColor: "#232733",
+        color: "#CCCCCC",
         py: 6,
         display: "flex",
         flexDirection: "column",
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
           target="_blank"
           sx={{
             backgroundColor: "#2A2D36",
-            color: "#B0B3C0",
+            color: "#CCCCCC",
             "&:hover": { backgroundColor: "#343741" },
           }}
         >
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
           target="_blank"
           sx={{
             backgroundColor: "#2A2D36",
-            color: "#B0B3C0",
+            color: "#CCCCCC",
             "&:hover": { backgroundColor: "#343741" },
           }}
         >
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
           target="_blank"
           sx={{
             backgroundColor: "#2A2D36",
-            color: "#B0B3C0",
+            color: "#CCCCCC",
             "&:hover": { backgroundColor: "#343741" },
           }}
         >
@@ -73,10 +73,8 @@ const Footer: React.FC = () => {
         <Typography
           variant="body2"
           sx={{
-            color: "#B0B3C0",
+            color: "#CCCCCC",
             textAlign: "center",
-            fontFamily: "'IBM Plex Mono', monospace",
-            fontStyle: "italic",
           }}
         >
           Crafted with love & a salted rim margarita.

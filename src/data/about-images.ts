@@ -1,6 +1,6 @@
-export const bentoImages = [
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/02%20Main%20Screen%20%283%29-dQR8k62zzxknM3wY8Sq9NMWjgvDuWN.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/02%20Main%20Screen%20%283%29-dQR8k62zzxknM3wY8Sq9NMWjgvDuWN.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/02%20Main%20Screen%20%283%29-dQR8k62zzxknM3wY8Sq9NMWjgvDuWN.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/02%20Main%20Screen%20%283%29-dQR8k62zzxknM3wY8Sq9NMWjgvDuWN.png",
-];
+import bentoImage1 from "../assets/images/bento-image1.svg";
+import bentoImage2 from "../assets/images/bento-image2.svg";
+import bentoImage3 from "../assets/images/bento-image3.svg";
+import bentoImage4 from "../assets/images/bento-image4.svg";
+
+export const bentoImages = [bentoImage1, bentoImage2, bentoImage3, bentoImage4];

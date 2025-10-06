@@ -6,6 +6,7 @@ import { HeroSection } from "./pages/home/HeroSection";
 import { ProjectsSection } from "./pages/home/ProjectsSection";
 import { AboutSection } from "./pages/about/AboutSection";
 import Footer from "./pages/footer/FooterSection";
+import CustomCursor from "./components/ui/CustomCursor";
 
 function App() {
   const [activeSection, setActiveSection] = useState<"work" | "about">("work");
@@ -13,6 +14,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <CustomCursor />
       <Box
         sx={{
           display: "flex",

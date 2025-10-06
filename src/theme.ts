@@ -10,7 +10,7 @@ export const colors = {
     footer: "#232733",
   },
   secondary: {
-    main: "#E2E8F0",
+    main: "#CCCCCC",
     light: "#F7FAFC",
     dark: "#CBD5E0",
   },
@@ -23,7 +23,7 @@ export const colors = {
   },
   text: {
     primary: "#F7FAFC",
-    secondary: "#CBD5E0",
+    secondary: "##CCCCCC",
     muted: "#A0AEC0",
   },
   accent: {
@@ -55,26 +55,26 @@ const themeOptions: ThemeOptions = {
     },
   },
   typography: {
-    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"DM Mono", monospace',
     h1: {
       fontSize: "3.5rem",
-      fontWeight: 700,
+      fontWeight: 500,
       lineHeight: 1.2,
       letterSpacing: "-0.02em",
     },
     h2: {
       fontSize: "2.5rem",
-      fontWeight: 600,
+      fontWeight: 500,
       lineHeight: 1.3,
     },
     h3: {
       fontSize: "2rem",
-      fontWeight: 600,
+      fontWeight: 500,
       lineHeight: 1.4,
     },
     h4: {
       fontSize: "1.5rem",
-      fontWeight: 600,
+      fontWeight: 500,
       lineHeight: 1.4,
     },
     body1: {
@@ -86,6 +86,7 @@ const themeOptions: ThemeOptions = {
       lineHeight: 1.6,
     },
   },
+
   shape: {
     borderRadius: 12,
   },

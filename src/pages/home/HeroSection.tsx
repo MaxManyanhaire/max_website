@@ -1,9 +1,8 @@
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import { colors } from "../../theme";
-import { GradientLine } from "../../components/ui/GradientLine";
-import { ScrollMouse } from "../../components/ui/ScrollMouse";
-import { AnimatedSection } from "../../components/ui/AnimatedSection";
+import { ScrollMouse } from "../../components/ScrollMouse";
+import { AnimatedSection } from "../../components/AnimatedSection";
 
 export const HeroSection: React.FC = () => {
   return (
@@ -42,7 +41,7 @@ export const HeroSection: React.FC = () => {
             <Typography
               variant="body1"
               sx={{
-                color: colors.text.secondary,
+                color: "#CCCCCC",
                 fontSize: "1.1rem",
                 letterSpacing: "0.05em",
               }}
@@ -55,10 +54,12 @@ export const HeroSection: React.FC = () => {
             <Typography
               variant="h1"
               sx={{
-                color: colors.text.primary,
+                color: "#C4C9E3",
                 maxWidth: "800px",
                 fontSize: { xs: "2rem", md: "3.5rem" },
                 lineHeight: 1.3,
+                fontFamily: '"Mulish", sans-serif',
+                fontWeight: 800,
               }}
             >
               Product Designer
