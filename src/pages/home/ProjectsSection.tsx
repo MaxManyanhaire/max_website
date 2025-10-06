@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container } from "@mui/material";
 import { colors } from "../../theme";
-import { ProjectCard } from "../../components/ui/ProjectCard";
+import { ProjectCard } from "../../components/ProjectCard";
 import { projects } from "../../data/project-data";
 
 export const ProjectsSection: React.FC = () => {

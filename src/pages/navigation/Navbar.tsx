@@ -8,15 +8,13 @@ import {
   Drawer,
   List,
   ListItem,
+  Container,
 } from "@mui/material";
 import { colors } from "../../theme";
-import { NavButton } from "../../components/ui/NavButton";
-import {
-  MenuIcon,
-  CloseIcon,
-  ArrowForwardIcon,
-} from "../../assets/icons/icons";
+import { NavButton } from "../../components/NavButton";
+import { MenuIcon, CloseIcon } from "../../assets/icons/icons";
 import profilePhoto from "../../assets/images/profile-photo.png";
+import { ArrowUpRight } from "lucide-react";
 
 interface NavbarProps {
   activeSection: "work" | "about";
@@ -44,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <>
+    <Container maxWidth="lg">
       <AppBar
         position="fixed"
         elevation={0}
@@ -81,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             sx={{
               display: { xs: "none", md: "flex" },
               gap: 2,
-              backgroundColor: colors.primary.main,
+              backgroundColor: "#0D101C",
               borderRadius: "28px",
               padding: "6px",
             }}
@@ -124,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 },
               }}
             >
-              email <ArrowForwardIcon sx={{ fontSize: 16 }} />
+              email <ArrowUpRight />
             </Box>
             <Box
               component="a"
@@ -143,7 +141,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 },
               }}
             >
-              resume <ArrowForwardIcon sx={{ fontSize: 16 }} />
+              resume <ArrowUpRight />
             </Box>
           </Box>
 
@@ -202,6 +200,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           </List>
         </Box>
       </Drawer>
-    </>
+    </Container>
   );
 };

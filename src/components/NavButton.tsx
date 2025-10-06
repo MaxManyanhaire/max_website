@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material";
 import type { ButtonProps } from "@mui/material";
-import { colors } from "../../theme";
+import { colors } from "../theme";
 
 interface NavButtonProps extends ButtonProps {
   active?: boolean;
@@ -16,8 +16,8 @@ export const NavButton: React.FC<NavButtonProps> = ({
     <Button
       {...props}
       sx={{
-        backgroundColor: active ? colors.text.primary : colors.primary.main,
-        color: active ? colors.primary.dark : colors.text.primary,
+        backgroundColor: active ? "#393E48" : "transparent",
+        color: active ? "#ffffff" : colors.text.primary,
         px: 3,
         py: 1,
         borderRadius: "24px",

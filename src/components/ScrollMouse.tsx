@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { colors } from "../../theme";
-import { scrollBounce } from "../../utils/animations";
+import { colors } from "../theme";
+import { scrollBounce } from "../utils/animations";
 
 export const ScrollMouse: React.FC = () => {
   return (
