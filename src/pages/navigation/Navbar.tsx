@@ -110,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               component="a"
               href="mailto:maxwell.manyanhaire@gmail.com"
               sx={{
-                color: colors.text.primary,
+                color: "#CCCCCC",
                 textDecoration: "none",
                 display: "flex",
                 alignItems: "center",
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               href="/resume.pdf"
               target="_blank"
               sx={{
-                color: colors.text.primary,
+                color: "#CCCCCC",
                 textDecoration: "none",
                 display: "flex",
                 alignItems: "center",
