@@ -10,7 +10,7 @@ export const projects: ProjectData[] = [
     description:
       "Pixel Pilot Is A Crew Companion App That Streamlines Funeral And Memorial Live-Streams. It Brings Camera Setups, Graphics, Roles, And Checklists Into One Place, Making Every Production Smooth And Coordinated.",
     image: pixelPilotDesktopApp,
-    caseStudyLink: "#",
+    caseStudyLink: "/projects/1", // ✅ internal link
   },
   {
     id: "2",
@@ -19,6 +19,6 @@ export const projects: ProjectData[] = [
     description:
       "Pixel Pilot Is A Crew Companion App That Streamlines Funeral And Memorial Live-Streams. It Brings Camera Setups, Graphics, Roles, And Checklists Into One Place, Making Every Production Smooth And Coordinated.",
     image: pixelPilotMobileApp,
-    caseStudyLink: "#",
+    caseStudyLink: "/projects/2", // ✅ internal link
   },
 ];

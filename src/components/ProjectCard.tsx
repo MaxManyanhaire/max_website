@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export interface ProjectData {
   id: string;
@@ -23,13 +24,23 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   layout = "left",
   delay = 0,
 }) => {
+  const navigate = useNavigate();
   const {
     title,
     subtitle,
     description,
     image,
     imageAlt = "Project image",
+    caseStudyLink,
   } = project;
+
+  const handleCaseStudyClick = () => {
+    if (caseStudyLink) {
+      navigate(caseStudyLink);
+    } else {
+      console.warn("No case study link provided.");
+    }
+  };
 
   return (
     <motion.div
@@ -75,6 +86,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </Typography>
           <Button
             variant="contained"
+            onClick={handleCaseStudyClick}
             sx={{
               color: "#CCCCCC",
               borderColor: "#CCCCCC",
