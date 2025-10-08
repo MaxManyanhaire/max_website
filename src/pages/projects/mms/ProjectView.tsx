@@ -4,7 +4,6 @@ import { SectionHeader } from "./SectionHeader";
 import { TextSection } from "./TextSection";
 import { InfoColumns } from "./InfoColumns";
 import { DesignProcess } from "./DesignProcess";
-import { ModuleDiagram } from "./ModuleDiagram";
 import { ModuleCard } from "./ModuleCard";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import StreamIcon from "@mui/icons-material/Stream";
@@ -12,8 +11,11 @@ import GroupIcon from "@mui/icons-material/Group";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import { infoColumns } from "./data/infocolumns";
 import { designSteps } from "./data/designsteps";
-import { modules } from "./data/modules";
 import pixelPixelDesktop from "../../../assets/images/pixel-pilot-desktop-app.svg";
+import { motion } from "framer-motion";
+import moduleDiagram from "../../../assets/images/module-diagram.svg";
+import { ProjectNavigation } from "./ui/ProjectNavigation";
+import { ScrollToTop } from "./ui/ScrollToTop";
 
 export const ProjectView: React.FC = () => {
   return (
@@ -84,6 +86,34 @@ export const ProjectView: React.FC = () => {
           content="The Muzungu Management System is built around seven modules that work together to simplify the entire streaming process. This core study focuses on the four primary modules—Booking, Streams, Crew, and Contacts—that form the backbone of modules like Contacts, Gear, and CRM enhance coordination behind the scenes."
           highlightWords={[]}
         />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              mb: 8,
+              py: 4,
+            }}
+          >
+            <Box
+              component="img"
+              src={moduleDiagram}
+              alt="Muzungu Core Modules Architecture"
+              sx={{
+                width: "100%",
+                maxWidth: "700px",
+                height: "auto",
+                filter: "drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3))",
+              }}
+            />
+          </Box>
+        </motion.div>
 
         {/* Explore Modules */}
         <SectionHeader title="Explore the Modules" />
@@ -122,6 +152,15 @@ export const ProjectView: React.FC = () => {
           </Grid>
         </Grid>
       </Container>
+      {/* Project Navigation */}
+      {/* <ProjectNavigation
+        nextProject={nextProject}
+        previousProject={previousProject}
+        onNavigate={onNavigate}
+      /> */}
+
+      {/* Scroll To Top Button */}
+      <ScrollToTop />
     </Box>
   );
 };
