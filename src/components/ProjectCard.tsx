@@ -16,12 +16,10 @@ export interface ProjectData {
 interface ProjectCardProps {
   project: ProjectData;
   delay?: number;
-  layout?: "left" | "right";
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
-  layout = "left",
   delay = 0,
 }) => {
   const navigate = useNavigate();
