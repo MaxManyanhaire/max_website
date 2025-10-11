@@ -1,7 +1,6 @@
 import { Box, Container, Typography, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import HomeIcon from "@mui/icons-material/Home";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 interface NotFoundProps {
   onNavigateHome?: () => void;

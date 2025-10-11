@@ -14,7 +14,6 @@ import { designSteps } from "./data/designsteps";
 import pixelPixelDesktop from "../../../assets/images/pixel-pilot-desktop-app.svg";
 import { motion } from "framer-motion";
 import moduleDiagram from "../../../assets/images/module-diagram.svg";
-import { ProjectNavigation } from "./ui/ProjectNavigation";
 import { ScrollToTop } from "./ui/ScrollToTop";
 
 export const ProjectView: React.FC = () => {

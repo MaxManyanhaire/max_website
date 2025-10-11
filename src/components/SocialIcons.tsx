@@ -1,6 +1,6 @@
 import React from "react";
 import { IconButton } from "@mui/material";
-import { colors } from "../../theme";
+import { colors } from "../../src/theme";
 import type { IconButtonProps } from "@mui/material";
 
 export const SocialIcon: React.FC<IconButtonProps> = ({

@@ -14,12 +14,8 @@ export const ProjectsSection: React.FC = () => {
       }}
     >
       <Container maxWidth="lg">
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            layout={index % 2 === 0 ? "left" : "right"}
-          />
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
       </Container>
     </Box>

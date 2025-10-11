@@ -6,11 +6,7 @@ type CursorType = "default" | "pointer" | "text" | "image";
 
 const isTouchDevice = (): boolean => {
   if (typeof window === "undefined") return false;
-  return (
-    "ontouchstart" in window ||
-    navigator.maxTouchPoints > 0 ||
-    navigator.msMaxTouchPoints > 0
-  );
+  return "ontouchstart" in window || navigator.maxTouchPoints > 0;
 };
 
 const CustomCursor: React.FC = () => {
@@ -19,7 +15,7 @@ const CustomCursor: React.FC = () => {
   const [enabled, setEnabled] = useState<boolean>(!isTouchDevice());
 
   const [cursorType, setCursorType] = useState<CursorType>("default");
-  const [isActive, setIsActive] = useState(false);
+  const [, setIsActive] = useState(false);
 
   const mouseX = useMotionValue(-1000);
   const mouseY = useMotionValue(-1000);
@@ -123,10 +119,7 @@ const CustomCursor: React.FC = () => {
 
   if (!enabled) return null;
 
-  const baseSize = 18;
   const pointerSize = 48;
-  const textSize = 14;
-  const imageSize = 56;
 
   const accent = theme.palette.primary.main;
   const fg =
