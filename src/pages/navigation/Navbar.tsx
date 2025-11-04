@@ -13,7 +13,7 @@ import {
 import { colors } from "../../theme";
 import { NavButton } from "../../components/NavButton";
 import { MenuIcon, CloseIcon } from "../../assets/icons/icons";
-import profilePhoto from "../../assets/images/profile-photo.png";
+
 import { ArrowUpRight } from "lucide-react";
 
 interface NavbarProps {
@@ -42,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
       <AppBar
         position="fixed"
         elevation={0}
@@ -61,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         >
           {/* Logo */}
           <Avatar
-            src={profilePhoto}
+            src="/profile-photo.JPG"
             alt="Maxwell"
             sx={{
               width: 48,

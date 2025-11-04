@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Typography, Grid } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { colors } from "../../theme";
 import { AnimatedSection } from "../../components/AnimatedSection";
 import { timelineData } from "../../data/timeline-data";
@@ -15,76 +15,64 @@ export const AboutSection: React.FC = () => {
       }}
     >
       <Container maxWidth="md">
-        <AnimatedSection animation="fadeInUp">
-          <Grid
-            container
-            spacing={2}
+        <AnimatedSection animation="fadeInUp" delay={0.2}>
+          {" "}
+          <Box
             sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", md: "1.5fr 1fr" },
+              gridTemplateRows: { md: "1fr 1fr" },
+              gap: 2,
+              maxWidth: "600px",
+              height: "400px",
               mb: 8,
-              maxWidth: "730px",
-              mx: "auto", // centers the grid horizontally
             }}
           >
-            {/* Left Tall Image */}
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Box
-                component="img"
-                src={bentoImages[0]}
-                alt="About 1"
-                sx={{
-                  width: "100%",
-                  height: { xs: "250px", md: "485px" },
-                  objectFit: "cover",
-                  borderRadius: 3,
-                }}
-              />
-            </Grid>
+            {/* Left Tall Image (spans two rows) */}
+            <Box
+              component="img"
+              src={bentoImages[0]}
+              alt="Left Tall"
+              sx={{
+                width: "100%",
+                height: { xs: "300px", md: "100%" },
+                objectFit: "cover",
+                borderRadius: 3,
+                gridRow: { md: "1 / span 2" },
+                gridColumn: "1 / 2",
+              }}
+            />
 
             {/* Top Right Image */}
-            <Grid size={{ xs: 6, md: 3 }}>
-              <Box
-                component="img"
-                src={bentoImages[1]}
-                alt="About 2"
-                sx={{
-                  width: "100%",
-                  height: { xs: "200px", md: "250px" },
-                  objectFit: "cover",
-                  borderRadius: 3,
-                }}
-              />
-            </Grid>
+            <Box
+              component="img"
+              src={bentoImages[1]}
+              alt="Top Right"
+              sx={{
+                width: "100%",
+                height: { xs: "200px", md: "200px" },
+                objectFit: "cover",
+                borderRadius: 3,
+                gridRow: "1 / 2",
+                gridColumn: { md: "2 / 3" },
+              }}
+            />
 
-            {/* Bottom Right Image */}
-            <Grid size={{ xs: 6, md: 3 }}>
-              <Box
-                component="img"
-                src={bentoImages[2]}
-                alt="About 3"
-                sx={{
-                  width: "100%",
-                  height: { xs: "200px", md: "250px" },
-                  objectFit: "cover",
-                  borderRadius: 3,
-                }}
-              />
-            </Grid>
-
-            {/* Bottom Wide Image */}
-            <Grid size={{ xs: 12 }}>
-              <Box
-                component="img"
-                src={bentoImages[3]}
-                alt="About 4"
-                sx={{
-                  width: "100%",
-                  height: { xs: "250px", md: "300px" },
-                  objectFit: "cover",
-                  borderRadius: 3,
-                }}
-              />
-            </Grid>
-          </Grid>
+            {/* Bottom Right Small Image */}
+            <Box
+              component="img"
+              src={bentoImages[2]}
+              alt="Bottom Right"
+              sx={{
+                width: "100%",
+                height: { xs: "200px", md: "200px" },
+                objectFit: "cover",
+                borderRadius: 3,
+                gridRow: "2 / 3",
+                gridColumn: { md: "2 / 3" },
+              }}
+            />
+          </Box>
         </AnimatedSection>
 
         {/* About Title */}
