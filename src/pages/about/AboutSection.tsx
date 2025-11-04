@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Typography, Grid } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { colors } from "../../theme";
 import { AnimatedSection } from "../../components/AnimatedSection";
 import { timelineData } from "../../data/timeline-data";
